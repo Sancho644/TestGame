@@ -50,10 +50,13 @@ namespace Scripts.Components
                 _animator.SetBool(IsRunning, true);
             }
 
+            if (distance < 2f)
+            {
+                _animator.SetBool(IsRunning, false);
+            }
+
             if (distance < 1.5f)
             {
-                _agent.enabled = false;
-                _animator.SetBool(IsRunning, false);
                 _canFire = true;
                 if (_isFinish)
                     _reload.Reload();
