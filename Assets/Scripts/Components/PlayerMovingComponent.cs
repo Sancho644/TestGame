@@ -24,10 +24,9 @@ namespace Scripts.Components
         private void Start()
         {
             _agent = GetComponent<NavMeshAgent>();
-            _animator = GetComponent<Animator>();
+            _animator = GetComponentInChildren<Animator>();
             _reload = GetComponent<ReloadLevelComponent>();
 
-            _agent.destination = _targetPoints[_currentPoint].transform.position;
             _agent.enabled = false;
         }
 
@@ -37,6 +36,7 @@ namespace Scripts.Components
             {
                 _startGame = true;
                 _agent.enabled = true;
+                _agent.destination = _targetPoints[_currentPoint].transform.position;
             }
 
             if (!_startGame) return;
