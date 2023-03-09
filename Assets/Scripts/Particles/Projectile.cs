@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Scripts.ObjectPool;
+using System.Collections;
 using UnityEngine;
 
 namespace Scripts.Particles
@@ -10,10 +11,12 @@ namespace Scripts.Particles
 
         private Vector3 _direction;
         private Transform _transform;
+        private PoolItem _poolItem;
 
         private void Awake()
         {
             _transform = GetComponent<Transform>();
+            _poolItem = GetComponent<PoolItem>();
         }
 
         private void OnEnable()
@@ -34,22 +37,12 @@ namespace Scripts.Particles
             BulletDeactivate();
         }
 
-        private void OnTriggerEnter(Collider other)
-        {
-            BulletDeactivate();
-        }
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            BulletDeactivate();
-        }
-
         private void BulletDeactivate()
         {
-            gameObject.SetActive(false);
+            _poolItem.Relese();
         }
 
-        public void Project(Vector3 direction)
+        public void SetDirection(Vector3 direction)
         {
             _direction = direction;
         }

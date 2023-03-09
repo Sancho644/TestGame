@@ -6,7 +6,7 @@ namespace Scripts.Components
     public class SpawnComponent : MonoBehaviour
     {
         [SerializeField] private Transform _target;
-        [SerializeField] private Bullet _prefab;
+        [SerializeField] private BulletSpawner _prefab;
 
         [ContextMenu("Spawn")]
         public void Spawn()

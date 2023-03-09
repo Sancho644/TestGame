@@ -9,7 +9,7 @@ namespace Scripts.WayPoints
         [SerializeField] private List<GameObject> _enemyes;
         [SerializeField] private PlayerMovingComponent _playerMoving;
 
-        private readonly int _index;
+        private const int _index = 0;
 
         public void RemoveFromList()
         {

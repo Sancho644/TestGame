@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 3502038447631954374}
   - component: {fileID: 5685061899267122190}
   - component: {fileID: 5396197939096502068}
-  - component: {fileID: 1452257658055257851}
-  - component: {fileID: 1523046935009009041}
   - component: {fileID: 5968144825300788314}
   - component: {fileID: 5405989628588099234}
   - component: {fileID: 7959993235447534563}
   - component: {fileID: 706355286495748156}
   - component: {fileID: -7189794977757379776}
+  - component: {fileID: 533723412665533895}
+  - component: {fileID: 8082514801712174218}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -90,35 +90,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1452257658055257851
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9119090870010151111}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1523046935009009041
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9119090870010151111}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!114 &5968144825300788314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +105,7 @@ MonoBehaviour:
   _onRestart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1452257658055257851}
+      - m_Target: {fileID: 8082514801712174218}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -171,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c09918a5825cb4db208564c71964eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
+  _speed: 30
   _lifeTime: 3
 --- !u!114 &706355286495748156
 MonoBehaviour:
@@ -213,7 +184,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1452257658055257851}
+      - m_Target: {fileID: 8082514801712174218}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -237,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617192a8bb9cc8e4da7f821016ef6bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Untagged
+  _tag: Ground
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -253,7 +224,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1452257658055257851}
+      - m_Target: {fileID: 8082514801712174218}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -265,3 +236,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!54 &533723412665533895
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119090870010151111}
+  serializedVersion: 2
+  m_Mass: 0.5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!136 &8082514801712174218
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119090870010151111}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.9775895
+  m_Height: 1.955179
+  m_Direction: 1
+  m_Center: {x: 0.12123525, y: 0, z: 0}

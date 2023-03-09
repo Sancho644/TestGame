@@ -9,7 +9,7 @@ namespace Scripts.Components
         [SerializeField] private string _tag;
         [SerializeField] private EnterEvent _action;
 
-        private void OnCollisionEnter(Collision other)
+        private void OnCollisionStay(Collision other)
         {
             if (other.gameObject.CompareTag(_tag))
             {

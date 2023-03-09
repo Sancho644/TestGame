@@ -19,6 +19,8 @@ namespace Scripts.Components
         private bool _isFinish = false;
         private bool _canFire = false;
 
+        private static readonly int IsRunning = Animator.StringToHash("isRunning");
+
         private void Start()
         {
             _agent = GetComponent<NavMeshAgent>();
@@ -45,13 +47,13 @@ namespace Scripts.Components
             if (distance > 5)
             {
                 _agent.enabled = true;
-                _animator.SetBool("isRunning", true);
+                _animator.SetBool(IsRunning, true);
             }
 
             if (distance < 1.5f)
             {
                 _agent.enabled = false;
-                _animator.SetBool("isRunning", false);
+                _animator.SetBool(IsRunning, false);
                 _canFire = true;
                 if (_isFinish)
                     _reload.Reload();
